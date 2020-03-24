@@ -1,0 +1,12 @@
+-> Cerinte
+-> Functionalitati
+-> UX
+-> Integrare cu alte limbaje/sistem
+-> Limbaje folosite
+	C#:
+		Unity3D			- Animatii + GUI + Debug
+		Visual Studio		- Implementare
+		PhotoShop		- Editare imagini
+
+-> Cum face app. viata mea mai buna?
+
