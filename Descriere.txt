@@ -10,3 +10,10 @@
 
 -> Cum face app. viata mea mai buna?
 
+Scopul aplicatiei: Entartainment
+
+Potentiali Clienti: Utilizatorii de Windows.
+
+1) Extract from archive. 
+2) Run setup.exe
+3) Enjoy the game!
