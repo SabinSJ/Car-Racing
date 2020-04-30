@@ -4,7 +4,7 @@
 -> Integrare cu alte limbaje/sistem
 -> Limbaje folosite
 	C#:
-		Unity3D			- Animatii + GUI + Debug
+		Visual Basic Forms	- Design
 		Visual Studio		- Implementare
 		PhotoShop		- Editare imagini
 
