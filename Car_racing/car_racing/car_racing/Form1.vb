@@ -28,7 +28,31 @@
 
     End Sub
 
+    Private Sub enemy_mover_Tick(sender As Object, e As EventArgs) Handles enemy_mover.Tick
+        enemy.Top += 1.5
+        If enemy.Top >= Me.Height Then
+            enemy.Top = -(CInt(Math.Ceiling(Rnd() * 175)) + enemy1.Height)
+            enemy.Left = CInt(Math.Ceiling(Rnd() * 220)) + 10
+        End If
+    End Sub
+
+    Private Sub enemy1_mover_Tick(sender As Object, e As EventArgs) Handles enemy1_mover.Tick
+        enemy1.Top += 2.25
+        If enemy1.Top >= Me.Height Then
+            enemy1.Top = -(CInt(Math.Ceiling(Rnd() * 175)) + enemy1.Height)
+            enemy1.Left = CInt(Math.Ceiling(Rnd() * 100)) + 45
+        End If
+    End Sub
+
+    Private Sub enemy2_mover_Tick(sender As Object, e As EventArgs) Handles enemy2_mover.Tick
+        enemy2.Top += 3
+        If enemy2.Top >= Me.Height Then
+            enemy2.Top = -(CInt(Math.Ceiling(Rnd() * 175)) + enemy1.Height)
+            enemy2.Left = CInt(Math.Ceiling(Rnd() * 40)) + 185
+        End If
+    End Sub
 
 End Class
 
 '  linia 1 - 29 -> Sarca Florin-Sabin
+'  linia 31 - 59 -> Zaharia Andrei
