@@ -26,6 +26,26 @@
             End If
         Next
 
+        If (player_car.Bounds.IntersectsWith(enemy.Bounds)) Then
+            gameover()
+        End If
+        If (player_car.Bounds.IntersectsWith(enemy1.Bounds)) Then
+            gameover()
+        End If
+        If (player_car.Bounds.IntersectsWith(enemy2.Bounds)) Then
+            gameover()
+        End If
+        speed_incrs.Text = "speed " & speed
+        If score > 10 And score < 20 Then
+            speed = 5
+        End If
+        If score > 20 And score < 30 Then
+            speed = 6
+        End If
+        If score > 35 Then
+            speed = 7
+        End If
+
     End Sub
 
     Private Sub enemy_mover_Tick(sender As Object, e As EventArgs) Handles enemy_mover.Tick
@@ -73,7 +93,26 @@
         InitializeComponent()
         Form1_Load(e, e)
     End Sub
-End Class
 
-'  linia 1 - 29 -> Sarca Florin-Sabin
-'  linia 31 - 59 -> Zaharia Andrei
+    Private Sub gameover()
+        rest_game.Visible = True
+        end_game.Visible = True
+        enemy1_mover.Stop()
+        enemy2_mover.Stop()
+        enemy_mover.Stop()
+        RoadMover.Stop()
+    End Sub
+
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Right Then
+            right_mover.Start()
+        End If
+        If e.KeyCode = Keys.Left Then
+            left_mover.Start()
+        End If
+    End Sub
+    Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp
+        right_mover.Stop()
+        left_mover.Stop()
+    End Sub
+End Class
