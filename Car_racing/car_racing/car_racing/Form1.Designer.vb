@@ -45,6 +45,11 @@ Partial Class car_racing
         Me.enemy = New System.Windows.Forms.PictureBox()
         Me.enemy1 = New System.Windows.Forms.PictureBox()
         Me.enemy2 = New System.Windows.Forms.PictureBox()
+        Me.end_game = New System.Windows.Forms.Label()
+        Me.rest_game = New System.Windows.Forms.Label()
+        Me.table_score = New System.Windows.Forms.Label()
+        Me.speed_incrs = New System.Windows.Forms.Label()
+        Me.player_car = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +65,7 @@ Partial Class car_racing
         CType(Me.enemy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.enemy1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.enemy2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.player_car, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -228,12 +234,77 @@ Partial Class car_racing
         Me.enemy2.TabIndex = 14
         Me.enemy2.TabStop = False
         '
+        'end_game
+        '
+        Me.end_game.AutoSize = True
+        Me.end_game.BackColor = System.Drawing.Color.White
+        Me.end_game.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.end_game.ForeColor = System.Drawing.Color.Red
+        Me.end_game.Location = New System.Drawing.Point(66, 81)
+        Me.end_game.Name = "end_game"
+        Me.end_game.Size = New System.Drawing.Size(186, 31)
+        Me.end_game.TabIndex = 15
+        Me.end_game.Text = "GAME OVER"
+        Me.end_game.Visible = False
+        '
+        'rest_game
+        '
+        Me.rest_game.AutoSize = True
+        Me.rest_game.BackColor = System.Drawing.Color.White
+        Me.rest_game.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rest_game.ForeColor = System.Drawing.Color.Red
+        Me.rest_game.Location = New System.Drawing.Point(121, 227)
+        Me.rest_game.Name = "rest_game"
+        Me.rest_game.Size = New System.Drawing.Size(74, 24)
+        Me.rest_game.TabIndex = 16
+        Me.rest_game.Text = "Replay"
+        Me.rest_game.Visible = False
+        '
+        'table_score
+        '
+        Me.table_score.AutoSize = True
+        Me.table_score.BackColor = System.Drawing.Color.DarkGray
+        Me.table_score.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.table_score.ForeColor = System.Drawing.Color.DarkViolet
+        Me.table_score.Location = New System.Drawing.Point(-1, 9)
+        Me.table_score.Name = "table_score"
+        Me.table_score.Size = New System.Drawing.Size(79, 24)
+        Me.table_score.TabIndex = 17
+        Me.table_score.Text = "score 0"
+        '
+        'speed_incrs
+        '
+        Me.speed_incrs.AutoSize = True
+        Me.speed_incrs.BackColor = System.Drawing.Color.DarkGray
+        Me.speed_incrs.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.speed_incrs.ForeColor = System.Drawing.Color.DarkViolet
+        Me.speed_incrs.Location = New System.Drawing.Point(219, 9)
+        Me.speed_incrs.Name = "speed_incrs"
+        Me.speed_incrs.Size = New System.Drawing.Size(85, 24)
+        Me.speed_incrs.TabIndex = 18
+        Me.speed_incrs.Text = "speed 0"
+        '
+        'player_car
+        '
+        Me.player_car.Image = CType(resources.GetObject("player_car.Image"), System.Drawing.Image)
+        Me.player_car.Location = New System.Drawing.Point(94, 305)
+        Me.player_car.Name = "player_car"
+        Me.player_car.Size = New System.Drawing.Size(40, 83)
+        Me.player_car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.player_car.TabIndex = 19
+        Me.player_car.TabStop = False
+        '
         'car_racing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(316, 422)
+        Me.Controls.Add(Me.player_car)
+        Me.Controls.Add(Me.speed_incrs)
+        Me.Controls.Add(Me.table_score)
+        Me.Controls.Add(Me.rest_game)
+        Me.Controls.Add(Me.end_game)
         Me.Controls.Add(Me.enemy2)
         Me.Controls.Add(Me.enemy1)
         Me.Controls.Add(Me.enemy)
@@ -267,7 +338,9 @@ Partial Class car_racing
         CType(Me.enemy, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.enemy1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.enemy2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.player_car, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -292,4 +365,9 @@ Partial Class car_racing
     Friend WithEvents enemy As PictureBox
     Friend WithEvents enemy1 As PictureBox
     Friend WithEvents enemy2 As PictureBox
+    Friend WithEvents end_game As Label
+    Friend WithEvents rest_game As Label
+    Friend WithEvents table_score As Label
+    Friend WithEvents speed_incrs As Label
+    Friend WithEvents player_car As PictureBox
 End Class
