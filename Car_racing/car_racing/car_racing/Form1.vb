@@ -1,4 +1,5 @@
-﻿Public Class car_racing
+﻿
+Public Class Form1
 
     Dim speed As Integer
     Dim road(12) As PictureBox
@@ -95,6 +96,7 @@
     End Sub
 
     Private Sub gameover()
+        Ex_game.Visible = True
         rest_game.Visible = True
         end_game.Visible = True
         enemy1_mover.Stop()
@@ -115,4 +117,11 @@
         right_mover.Stop()
         left_mover.Stop()
     End Sub
+
+    Private Sub Ex_game_Click(sender As Object, e As EventArgs) Handles Ex_game.Click
+        Me.Close()
+        Form2.Close()
+    End Sub
+
+
 End Class
