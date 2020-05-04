@@ -5,7 +5,7 @@
 
     Private Sub start_butt_Click(sender As Object, e As EventArgs) Handles start_butt.Click
         Me.Hide()
-        Form1.Show()
+        Form3.Show()
     End Sub
 
     Private Sub exit_butt_Click(sender As Object, e As EventArgs) Handles exit_butt.Click

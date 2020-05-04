@@ -38,7 +38,6 @@ C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\bi
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\bin\Debug\car_racing.pdb
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\bin\Debug\car_racing.xml
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.vbprojAssemblyReference.cache
-C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.car_racing.resources
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Resources.resources
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.vbproj.GenerateResource.cache
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.vbproj.CoreCompileInputs.cache
@@ -47,3 +46,6 @@ C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\ob
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.pdb
 C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form2.resources
 C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form1.resources
+C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form1.resources
+C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form2.resources
+C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form3.resources

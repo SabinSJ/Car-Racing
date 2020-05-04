@@ -4,7 +4,10 @@ Public Class Form1
     Dim speed As Integer
     Dim road(12) As PictureBox
     Dim score As Integer
+    Dim pause_game As Boolean
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+        pause_game = False
         speed = 3
         road(0) = PictureBox1
         road(1) = PictureBox2
@@ -96,6 +99,7 @@ Public Class Form1
     End Sub
 
     Private Sub gameover()
+        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
         Ex_game.Visible = True
         rest_game.Visible = True
         end_game.Visible = True
@@ -122,6 +126,4 @@ Public Class Form1
         Me.Close()
         Form2.Close()
     End Sub
-
-
 End Class
