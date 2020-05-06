@@ -1,13 +1,37 @@
-﻿
+﻿Imports System.Drawing
+Imports System.Drawing.Drawing2D
 Public Class Form1
 
     Dim speed As Integer
     Dim road(12) As PictureBox
     Dim score As Integer
-    Dim pause_game As Boolean
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
-        pause_game = False
+        Dim rsg As New Drawing2D.GraphicsPath
+        Dim exg As New Drawing2D.GraphicsPath
+
+        rsg.StartFigure()
+        rsg.AddArc(New Rectangle(0, 0, 10, 10), 180, 90)
+        rsg.AddLine(10, 0, rest_game.Width - 20, 0)
+        rsg.AddArc(New Rectangle(rest_game.Width - 10, 0, 10, 10), -90, 90)
+        rsg.AddLine(rest_game.Width, 20, rest_game.Width, rest_game.Height - 10)
+        rsg.AddArc(New Rectangle(rest_game.Width - 10, rest_game.Height - 10, 10, 10), 0, 90)
+        rsg.AddLine(rest_game.Width - 10, rest_game.Height, 20, rest_game.Height)
+        rsg.AddArc(New Rectangle(0, rest_game.Height - 10, 10, 10), 90, 90)
+        rsg.CloseFigure()
+        rest_game.Region = New Region(rsg)
+
+        exg.StartFigure()
+        exg.AddArc(New Rectangle(0, 0, 10, 10), 180, 90)
+        exg.AddLine(10, 0, Ex_game.Width - 20, 0)
+        exg.AddArc(New Rectangle(Ex_game.Width - 10, 0, 10, 10), -90, 90)
+        exg.AddLine(Ex_game.Width, 20, Ex_game.Width, Ex_game.Height - 10)
+        exg.AddArc(New Rectangle(Ex_game.Width - 10, Ex_game.Height - 10, 10, 10), 0, 90)
+        exg.AddLine(Ex_game.Width - 10, Ex_game.Height, 20, Ex_game.Height)
+        exg.AddArc(New Rectangle(0, Ex_game.Height - 10, 10, 10), 90, 90)
+        exg.CloseFigure()
+        Ex_game.Region = New Region(exg)
+
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
         speed = 3
         road(0) = PictureBox1
         road(1) = PictureBox2
@@ -29,7 +53,6 @@ Public Class Form1
                 road(x).Top = -road(x).Height
             End If
         Next
-
         If (player_car.Bounds.IntersectsWith(enemy.Bounds)) Then
             gameover()
         End If
@@ -81,25 +104,21 @@ Public Class Form1
             enemy2.Left = CInt(Math.Ceiling(Rnd() * 40)) + 185
         End If
     End Sub
+
     Private Sub left_mover_Tick(sender As Object, e As EventArgs) Handles left_mover.Tick
-        If player_car.Location.X > -6 Then
+        If player_car.Location.X > 65 Then
             player_car.Left -= 5
         End If
     End Sub
+
     Private Sub right_mover_Tick(sender As Object, e As EventArgs) Handles right_mover.Tick
-        If player_car.Location.X < 273 Then
+        If player_car.Location.X < 229 Then
             player_car.Left += 5
         End If
     End Sub
-    Private Sub rest_game_Click(sender As Object, e As EventArgs) Handles rest_game.Click
-        score = 0
-        Me.Controls.Clear()
-        InitializeComponent()
-        Form1_Load(e, e)
-    End Sub
 
     Private Sub gameover()
-        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
         Ex_game.Visible = True
         rest_game.Visible = True
         end_game.Visible = True
@@ -122,7 +141,14 @@ Public Class Form1
         left_mover.Stop()
     End Sub
 
-    Private Sub Ex_game_Click(sender As Object, e As EventArgs) Handles Ex_game.Click
+    Private Sub rest_game_MouseDown(sender As Object, e As MouseEventArgs) Handles rest_game.MouseDown
+        score = 0
+        Me.Controls.Clear()
+        InitializeComponent()
+        Form1_Load(e, e)
+    End Sub
+
+    Private Sub Ex_game_MouseDown(sender As Object, e As MouseEventArgs) Handles Ex_game.MouseDown
         Me.Close()
         Form2.Close()
     End Sub

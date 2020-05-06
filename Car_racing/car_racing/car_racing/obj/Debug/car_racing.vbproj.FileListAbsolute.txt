@@ -50,3 +50,5 @@ C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\ob
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form2.resources
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form3.resources
 C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form4.resources
+C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form3.resources
+C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\obj\Debug\car_racing.Form4.resources

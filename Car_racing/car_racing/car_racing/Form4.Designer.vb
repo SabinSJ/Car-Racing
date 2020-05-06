@@ -23,37 +23,42 @@ Partial Class Form4
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Ok_butt = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(92, 35)
+        Me.Label1.Location = New System.Drawing.Point(69, 28)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 25)
+        Me.Label1.Size = New System.Drawing.Size(94, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Insert name"
         '
-        'Button1
+        'Ok_butt
         '
-        Me.Button1.Location = New System.Drawing.Point(188, 85)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(99, 27)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "OK"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Ok_butt.FlatAppearance.BorderSize = 0
+        Me.Ok_butt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Ok_butt.Location = New System.Drawing.Point(147, 68)
+        Me.Ok_butt.Margin = New System.Windows.Forms.Padding(2)
+        Me.Ok_butt.Name = "Ok_butt"
+        Me.Ok_butt.Size = New System.Drawing.Size(74, 22)
+        Me.Ok_butt.TabIndex = 1
+        Me.Ok_butt.Text = "OK"
+        Me.Ok_butt.UseVisualStyleBackColor = True
         '
         'Form4
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(309, 124)
+        Me.ClientSize = New System.Drawing.Size(232, 101)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Ok_butt)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form4"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Error"
@@ -63,5 +68,5 @@ Partial Class Form4
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Ok_butt As Button
 End Class
