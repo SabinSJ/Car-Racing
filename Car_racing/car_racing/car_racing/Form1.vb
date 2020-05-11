@@ -31,7 +31,7 @@ Public Class Form1
         exg.CloseFigure()
         Ex_game.Region = New Region(exg)
 
-        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
         speed = 3
         road(0) = PictureBox1
         road(1) = PictureBox2
@@ -81,7 +81,7 @@ Public Class Form1
             score += 1
             table_score.Text = "score " & score
             enemy.Top = -(CInt(Math.Ceiling(Rnd() * 175)) + enemy1.Height)
-            enemy.Left = CInt(Math.Ceiling(Rnd() * 220)) + 10
+            enemy.Left = CInt(Math.Ceiling(Rnd() * 50) + 83)
         End If
     End Sub
 
@@ -91,7 +91,7 @@ Public Class Form1
             score += 1
             table_score.Text = "score " & score
             enemy1.Top = -(CInt(Math.Ceiling(Rnd() * 175)) + enemy1.Height)
-            enemy1.Left = CInt(Math.Ceiling(Rnd() * 100)) + 45
+            enemy1.Left = CInt(Math.Ceiling(Rnd() * 50) + 150)
         End If
     End Sub
 
@@ -101,7 +101,7 @@ Public Class Form1
             score += 1
             table_score.Text = "score " & score
             enemy2.Top = -(CInt(Math.Ceiling(Rnd() * 175)) + enemy1.Height)
-            enemy2.Left = CInt(Math.Ceiling(Rnd() * 40)) + 185
+            enemy2.Left = CInt(Math.Ceiling(Rnd() * 40) + 190)
         End If
     End Sub
 
@@ -118,7 +118,7 @@ Public Class Form1
     End Sub
 
     Private Sub gameover()
-        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
+        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
         Ex_game.Visible = True
         rest_game.Visible = True
         end_game.Visible = True
@@ -152,4 +152,5 @@ Public Class Form1
         Me.Close()
         Form2.Close()
     End Sub
+
 End Class
