@@ -5,6 +5,7 @@ Public Class Form1
     Dim speed As Integer
     Dim road(12) As PictureBox
     Dim score As Integer
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim rsg As New Drawing2D.GraphicsPath
         Dim exg As New Drawing2D.GraphicsPath
@@ -31,7 +32,7 @@ Public Class Form1
         exg.CloseFigure()
         Ex_game.Region = New Region(exg)
 
-        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
         speed = 3
         road(0) = PictureBox1
         road(1) = PictureBox2
@@ -46,6 +47,21 @@ Public Class Form1
         road(10) = PictureBox11
         road(11) = PictureBox12
     End Sub
+
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Right Then
+            right_mover.Start()
+        End If
+        If e.KeyCode = Keys.Left Then
+            left_mover.Start()
+        End If
+    End Sub
+
+    Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp
+        right_mover.Stop()
+        left_mover.Stop()
+    End Sub
+
     Private Sub RoadMover_Tick(sender As Object, e As EventArgs) Handles RoadMover.Tick
         For x As Integer = 0 To 11
             road(x).Top += speed
@@ -106,19 +122,19 @@ Public Class Form1
     End Sub
 
     Private Sub left_mover_Tick(sender As Object, e As EventArgs) Handles left_mover.Tick
-        If player_car.Location.X > 65 Then
+        If (player_car.Location.X > 65) Then
             player_car.Left -= 5
         End If
     End Sub
 
     Private Sub right_mover_Tick(sender As Object, e As EventArgs) Handles right_mover.Tick
-        If player_car.Location.X < 229 Then
+        If (player_car.Location.X < 229) Then
             player_car.Left += 5
         End If
     End Sub
 
     Private Sub gameover()
-        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
         Ex_game.Visible = True
         rest_game.Visible = True
         end_game.Visible = True
@@ -126,19 +142,6 @@ Public Class Form1
         enemy2_mover.Stop()
         enemy_mover.Stop()
         RoadMover.Stop()
-    End Sub
-
-    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.Right Then
-            right_mover.Start()
-        End If
-        If e.KeyCode = Keys.Left Then
-            left_mover.Start()
-        End If
-    End Sub
-    Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp
-        right_mover.Stop()
-        left_mover.Stop()
     End Sub
 
     Private Sub rest_game_MouseDown(sender As Object, e As MouseEventArgs) Handles rest_game.MouseDown
@@ -153,4 +156,37 @@ Public Class Form1
         Form2.Close()
     End Sub
 
+    Private Sub Pause_game_Tick(sender As Object, e As EventArgs) Handles Pause_game.Tick
+        RoadMover.Stop()
+        enemy1_mover.Stop()
+        enemy2_mover.Stop()
+        enemy_mover.Stop()
+        My.Computer.Audio.Stop()
+    End Sub
+
+    Private Sub cont_butt_MouseDown(sender As Object, e As MouseEventArgs) Handles cont_butt.MouseDown
+        paused_text.Visible = False
+        Pause_game.Enabled = False
+        cont_butt.Visible = False
+        Ext_butt.Visible = False
+
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+
+        RoadMover.Start()
+        enemy1_mover.Start()
+        enemy2_mover.Start()
+        enemy_mover.Start()
+    End Sub
+
+    Private Sub Ext_butt_MouseDown(sender As Object, e As MouseEventArgs) Handles Ext_butt.MouseDown
+        Me.Close()
+        Form2.Close()
+    End Sub
+
+    Private Sub paused_game_MouseDown(sender As Object, e As MouseEventArgs) Handles paused_game.MouseDown
+        paused_text.Visible = True
+        Pause_game.Enabled = True
+        cont_butt.Visible = True
+        Ext_butt.Visible = True
+    End Sub
 End Class
