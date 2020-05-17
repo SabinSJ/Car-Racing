@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 
 Public Class SQL_Control
-    Public SQLCon As New SqlConnection With {.ConnectionString = "Server=SABINSJ;Database=master;User=sa;Pwd=racingcar;"}
+    Public SQLCon As New SqlConnection With {.ConnectionString = "Server=SabinSJ;Database=master;User=sa;Pwd=racingcar;"}
     Public SQLCmd As SqlCommand
     Public SQLDA As SqlDataAdapter
     Public SQLDataSet As DataSet

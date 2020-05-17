@@ -1,7 +1,12 @@
 ﻿Imports System.Drawing
 Imports System.Drawing.Drawing2D
+
+
 Public Class Form1
 
+    Inherits System.Windows.Forms.Form
+    Dim SQL As New SQL_Control
+    Dim insertName As String
     Dim speed As Integer
     Dim road(12) As PictureBox
     Dim score As Integer
@@ -32,7 +37,7 @@ Public Class Form1
         exg.CloseFigure()
         Ex_game.Region = New Region(exg)
 
-        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
         speed = 3
         road(0) = PictureBox1
         road(1) = PictureBox2
@@ -134,7 +139,9 @@ Public Class Form1
     End Sub
 
     Private Sub gameover()
-        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
+
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
+
         Ex_game.Visible = True
         rest_game.Visible = True
         end_game.Visible = True
@@ -142,6 +149,13 @@ Public Class Form1
         enemy2_mover.Stop()
         enemy_mover.Stop()
         RoadMover.Stop()
+
+        insertName = Form3.nume.ToString
+
+        If SQL.HasConnection = True Then
+            SQL.AddName(insertName, score)
+        End If
+
     End Sub
 
     Private Sub rest_game_MouseDown(sender As Object, e As MouseEventArgs) Handles rest_game.MouseDown
@@ -164,13 +178,20 @@ Public Class Form1
         My.Computer.Audio.Stop()
     End Sub
 
-    Private Sub cont_butt_MouseDown(sender As Object, e As MouseEventArgs) Handles cont_butt.MouseDown
+    Private Sub paused_game_MouseDown(sender As Object, e As MouseEventArgs) Handles paused_game.MouseDown
+        paused_text.Visible = True
+        Pause_game.Enabled = True
+        cont_butt.Visible = True
+        Ext_butt.Visible = True
+    End Sub
+
+    Private Sub cont_butt_Click(sender As Object, e As EventArgs) Handles cont_butt.Click
         paused_text.Visible = False
         Pause_game.Enabled = False
         cont_butt.Visible = False
         Ext_butt.Visible = False
 
-        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
 
         RoadMover.Start()
         enemy1_mover.Start()
@@ -178,15 +199,8 @@ Public Class Form1
         enemy_mover.Start()
     End Sub
 
-    Private Sub Ext_butt_MouseDown(sender As Object, e As MouseEventArgs) Handles Ext_butt.MouseDown
+    Private Sub Ext_butt_Click(sender As Object, e As EventArgs) Handles Ext_butt.Click
         Me.Close()
         Form2.Close()
-    End Sub
-
-    Private Sub paused_game_MouseDown(sender As Object, e As MouseEventArgs) Handles paused_game.MouseDown
-        paused_text.Visible = True
-        Pause_game.Enabled = True
-        cont_butt.Visible = True
-        Ext_butt.Visible = True
     End Sub
 End Class

@@ -52,10 +52,10 @@ Partial Class Form1
         Me.Ex_game = New System.Windows.Forms.Button()
         Me.end_game = New System.Windows.Forms.PictureBox()
         Me.paused_text = New System.Windows.Forms.PictureBox()
-        Me.cont_butt = New System.Windows.Forms.Button()
-        Me.Ext_butt = New System.Windows.Forms.Button()
         Me.player_car = New System.Windows.Forms.PictureBox()
         Me.paused_game = New System.Windows.Forms.PictureBox()
+        Me.cont_butt = New System.Windows.Forms.PictureBox()
+        Me.Ext_butt = New System.Windows.Forms.PictureBox()
         CType(Me.enemy2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.enemy1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.enemy, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +75,8 @@ Partial Class Form1
         CType(Me.paused_text, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.player_car, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.paused_game, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cont_butt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ext_butt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RoadMover
@@ -333,34 +335,6 @@ Partial Class Form1
         Me.paused_text.TabStop = False
         Me.paused_text.Visible = False
         '
-        'cont_butt
-        '
-        Me.cont_butt.BackColor = System.Drawing.Color.Transparent
-        Me.cont_butt.BackgroundImage = CType(resources.GetObject("cont_butt.BackgroundImage"), System.Drawing.Image)
-        Me.cont_butt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.cont_butt.FlatAppearance.BorderSize = 0
-        Me.cont_butt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cont_butt.Location = New System.Drawing.Point(86, 233)
-        Me.cont_butt.Name = "cont_butt"
-        Me.cont_butt.Size = New System.Drawing.Size(163, 48)
-        Me.cont_butt.TabIndex = 25
-        Me.cont_butt.UseVisualStyleBackColor = False
-        Me.cont_butt.Visible = False
-        '
-        'Ext_butt
-        '
-        Me.Ext_butt.BackColor = System.Drawing.Color.Transparent
-        Me.Ext_butt.BackgroundImage = CType(resources.GetObject("Ext_butt.BackgroundImage"), System.Drawing.Image)
-        Me.Ext_butt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Ext_butt.FlatAppearance.BorderSize = 0
-        Me.Ext_butt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Ext_butt.Location = New System.Drawing.Point(86, 296)
-        Me.Ext_butt.Name = "Ext_butt"
-        Me.Ext_butt.Size = New System.Drawing.Size(163, 48)
-        Me.Ext_butt.TabIndex = 26
-        Me.Ext_butt.UseVisualStyleBackColor = False
-        Me.Ext_butt.Visible = False
-        '
         'player_car
         '
         Me.player_car.BackColor = System.Drawing.Color.Transparent
@@ -383,6 +357,30 @@ Partial Class Form1
         Me.paused_game.TabIndex = 28
         Me.paused_game.TabStop = False
         '
+        'cont_butt
+        '
+        Me.cont_butt.BackColor = System.Drawing.Color.Transparent
+        Me.cont_butt.Image = CType(resources.GetObject("cont_butt.Image"), System.Drawing.Image)
+        Me.cont_butt.Location = New System.Drawing.Point(86, 233)
+        Me.cont_butt.Name = "cont_butt"
+        Me.cont_butt.Size = New System.Drawing.Size(163, 48)
+        Me.cont_butt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.cont_butt.TabIndex = 29
+        Me.cont_butt.TabStop = False
+        Me.cont_butt.Visible = False
+        '
+        'Ext_butt
+        '
+        Me.Ext_butt.BackColor = System.Drawing.Color.Transparent
+        Me.Ext_butt.Image = CType(resources.GetObject("Ext_butt.Image"), System.Drawing.Image)
+        Me.Ext_butt.Location = New System.Drawing.Point(86, 296)
+        Me.Ext_butt.Name = "Ext_butt"
+        Me.Ext_butt.Size = New System.Drawing.Size(163, 48)
+        Me.Ext_butt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Ext_butt.TabIndex = 30
+        Me.Ext_butt.TabStop = False
+        Me.Ext_butt.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -391,10 +389,10 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(332, 458)
-        Me.Controls.Add(Me.paused_game)
-        Me.Controls.Add(Me.player_car)
         Me.Controls.Add(Me.Ext_butt)
         Me.Controls.Add(Me.cont_butt)
+        Me.Controls.Add(Me.paused_game)
+        Me.Controls.Add(Me.player_car)
         Me.Controls.Add(Me.paused_text)
         Me.Controls.Add(Me.end_game)
         Me.Controls.Add(Me.Ex_game)
@@ -442,6 +440,8 @@ Partial Class Form1
         CType(Me.paused_text, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.player_car, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.paused_game, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cont_butt, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ext_butt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -475,8 +475,8 @@ Partial Class Form1
     Friend WithEvents Ex_game As Button
     Friend WithEvents end_game As PictureBox
     Friend WithEvents paused_text As PictureBox
-    Friend WithEvents cont_butt As Button
-    Friend WithEvents Ext_butt As Button
     Friend WithEvents player_car As PictureBox
     Friend WithEvents paused_game As PictureBox
+    Friend WithEvents cont_butt As PictureBox
+    Friend WithEvents Ext_butt As PictureBox
 End Class

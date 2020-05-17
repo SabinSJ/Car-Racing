@@ -1,10 +1,21 @@
 ﻿Public Class Form3
+    Inherits System.Windows.Forms.Form
+    Dim SQL As New SQL_Control
+    Public Shared nume As String
+
+    Public ReadOnly Property UserName() As String
+        Get
+            Return Enter_Name.Text
+        End Get
+    End Property
+
     Private Sub Start_button_Click(sender As Object, e As EventArgs) Handles Start_button.Click
         List_Player.Items.Add(Enter_Name.Text)
 
         If Enter_Name.Text = Nothing Then
             Form4.Show()
         Else
+            nume = UserName
             Form1.Show()
             Me.Close()
         End If
