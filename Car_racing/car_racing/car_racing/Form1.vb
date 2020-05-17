@@ -37,7 +37,7 @@ Public Class Form1
         exg.CloseFigure()
         Ex_game.Region = New Region(exg)
 
-        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
         speed = 3
         road(0) = PictureBox1
         road(1) = PictureBox2
@@ -140,7 +140,7 @@ Public Class Form1
 
     Private Sub gameover()
 
-        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
+        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\car_crash.wav")
 
         Ex_game.Visible = True
         rest_game.Visible = True
@@ -191,7 +191,7 @@ Public Class Form1
         cont_butt.Visible = False
         Ext_butt.Visible = False
 
-        My.Computer.Audio.Play("C:\Users\Zaharia Andrei\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+        My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
 
         RoadMover.Start()
         enemy1_mover.Start()

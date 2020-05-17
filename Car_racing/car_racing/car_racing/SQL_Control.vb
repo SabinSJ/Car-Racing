@@ -18,6 +18,29 @@ Public Class SQL_Control
         End Try
     End Function
 
+    Public Sub RunQuery(Query As String)
+
+        Try
+            SQLCon.Open()
+
+            SQLCmd = New SqlCommand(Query, SQLCon)
+            SQLDA = New SqlDataAdapter(SQLCmd)
+            SQLDataSet = New DataSet
+            SQLDA.Fill(SQLDataSet)
+
+            SQLCon.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+            If SQLCon.State = ConnectionState.Open Then
+                SQLCon.Close()
+            End If
+
+        End Try
+    End Sub
+
+
     Public Sub AddName(Name As String, Score As Integer)
         Try
             Dim strInsert As String = "Insert INTO rank (name,score)" &
