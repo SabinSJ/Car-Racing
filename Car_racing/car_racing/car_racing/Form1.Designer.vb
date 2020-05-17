@@ -142,7 +142,7 @@ Partial Class Form1
         Me.enemy2.BackColor = System.Drawing.Color.Transparent
         Me.enemy2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.enemy2.Image = CType(resources.GetObject("enemy2.Image"), System.Drawing.Image)
-        Me.enemy2.Location = New System.Drawing.Point(122, 80)
+        Me.enemy2.Location = New System.Drawing.Point(126, 31)
         Me.enemy2.Name = "enemy2"
         Me.enemy2.Size = New System.Drawing.Size(42, 87)
         Me.enemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -153,7 +153,7 @@ Partial Class Form1
         '
         Me.enemy1.BackColor = System.Drawing.Color.Transparent
         Me.enemy1.Image = CType(resources.GetObject("enemy1.Image"), System.Drawing.Image)
-        Me.enemy1.Location = New System.Drawing.Point(62, 124)
+        Me.enemy1.Location = New System.Drawing.Point(62, 164)
         Me.enemy1.Name = "enemy1"
         Me.enemy1.Size = New System.Drawing.Size(42, 86)
         Me.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

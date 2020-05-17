@@ -47,4 +47,8 @@
     Private Sub exit_butt_Click(sender As Object, e As EventArgs) Handles exit_butt.Click
         Me.Close()
     End Sub
+
+    Private Sub hist_butt_Click(sender As Object, e As EventArgs) Handles hist_butt.Click
+        Form5.Show()
+    End Sub
 End Class

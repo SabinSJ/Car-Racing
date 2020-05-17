@@ -22,8 +22,9 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles back_butt.Click
+    Private Sub back_butt_Click(sender As Object, e As EventArgs) Handles back_butt.Click
         Form2.Show()
+        Me.Close()
     End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load

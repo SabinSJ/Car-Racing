@@ -38,6 +38,7 @@ Public Class Form1
         Ex_game.Region = New Region(exg)
 
         My.Computer.Audio.Play("C:\Users\SabinSJ\Documents\GitHub\Car-Racing\Car_racing\car_racing\car_racing\Sounds\music.wav")
+
         speed = 3
         road(0) = PictureBox1
         road(1) = PictureBox2
@@ -203,4 +204,5 @@ Public Class Form1
         Me.Close()
         Form2.Close()
     End Sub
+
 End Class

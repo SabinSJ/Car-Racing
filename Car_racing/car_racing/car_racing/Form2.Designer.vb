@@ -67,9 +67,9 @@ Partial Class Form2
         Me.hist_butt.Location = New System.Drawing.Point(111, 228)
         Me.hist_butt.MinimumSize = New System.Drawing.Size(92, 32)
         Me.hist_butt.Name = "hist_butt"
-        Me.hist_butt.Size = New System.Drawing.Size(92, 32)
+        Me.hist_butt.Size = New System.Drawing.Size(100, 32)
         Me.hist_butt.TabIndex = 3
-        Me.hist_butt.Text = "History"
+        Me.hist_butt.Text = "High Score"
         Me.hist_butt.UseVisualStyleBackColor = False
         '
         'start_butt
